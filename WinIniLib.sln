@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinIniLib", "WinIni.vcxproj", "{B8019C3F-FA5F-4FDB-BAF8-A1B325860678}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Ansi|x86 = Ansi|x86
+		Unicode|x86 = Unicode|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8019C3F-FA5F-4FDB-BAF8-A1B325860678}.Ansi|x86.ActiveCfg = Ansi|Win32
+		{B8019C3F-FA5F-4FDB-BAF8-A1B325860678}.Ansi|x86.Build.0 = Ansi|Win32
+		{B8019C3F-FA5F-4FDB-BAF8-A1B325860678}.Unicode|x86.ActiveCfg = Unicode|Win32
+		{B8019C3F-FA5F-4FDB-BAF8-A1B325860678}.Unicode|x86.Build.0 = Unicode|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DB0EBFE-9201-4B71-B3D0-89A4A34FD236}
+	EndGlobalSection
+EndGlobal

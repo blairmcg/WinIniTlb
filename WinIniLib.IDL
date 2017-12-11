@@ -1,0 +1,14 @@
+midl_pragma warning(disable: 2471) // Some attributes and/or data types in the idl and/or included/imported idl files can not be represented in the type library: size_is/length_is etc.
+midl_pragma warning(disable: 2461) // inapplicable attribute : [restricted] [ Field 'blah' of Struct 'BLAH' ( Parameter 'blahblah' ) ]
+midl_pragma warning(disable: 2231) // no remote procedures specified in non-[local] interface; no client/server stubs will be generated : [ Interface 'IBlah'  ]
+
+[
+	uuid(370dd7f9-dc71-4313-a179-2f5e42ef6ccc),
+	helpstring("Windows Initialization File API"),
+	version(10.0)
+]
+library WinIni
+{
+    #include "windef.idl"
+ 	#include "winini.idl"
+};

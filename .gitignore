@@ -1,0 +1,7 @@
+.vs
+WinIniLib.h
+*_i.c
+*.VC.*
+*.vcxproj.user
+Ansi
+Unicode

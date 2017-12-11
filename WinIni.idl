@@ -1,0 +1,257 @@
+
+[
+#ifdef UNICODE
+uuid(E55AC741-0BD6-4346-B5BA-98E93D9694C7),
+#else
+uuid(64674048-3a82-101b-8181-00aa003743d3),
+#endif
+helpstring("Ini-file API Functions"),
+dllname("KERNEL32.DLL")
+]
+module Kernel 
+{
+	[
+		usesgetlasterror,
+#ifdef UNICODE
+		entry("GetProfileIntW"),
+#else
+		entry("GetProfileIntA"),
+#endif
+		helpstring("Retrieves an integer from a key in the specified section of the Win.ini file."),
+	]
+WINBASEAPI 
+UINT    
+WINAPI GetProfileInt(
+	_In_ LPCTSTR lpAppName,
+	_In_ LPCTSTR lpKeyName,
+	_In_ INT iDef);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("GetProfileStringW"),
+#else
+	entry("GetProfileStringA"),
+#endif
+	helpstring("Retrieves the string associated with a key in the specified section of the Win.ini file."),
+]
+WINBASEAPI
+DWORD
+WINAPI
+GetProfileString(
+	_In_opt_ LPCTSTR lpAppName,
+	_In_opt_ LPCTSTR lpKeyName,
+	_In_opt_ LPCTSTR lpDefault,
+	_Out_writes_to_opt_(nSize, return + 1) LPTSTR lpReturnedString,
+	_In_     DWORD nSize
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("WriteProfileStringW"),
+#else
+	entry("WriteProfileStringA"),
+#endif
+	helpstring("Copies a string into the specified section of the Win.ini file."),
+]
+WINBASEAPI
+BOOL
+WINAPI
+WriteProfileStringA(
+	_In_opt_ LPCTSTR lpAppName,
+	_In_opt_ LPCTSTR lpKeyName,
+	_In_opt_ LPCTSTR lpString
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("GetProfileSectionW"),
+#else
+	entry("GetProfileSectionA"),
+#endif
+	helpstring("Retrieves all the keys and values for the specified section of the Win.ini file.")
+]
+WINBASEAPI
+DWORD
+WINAPI
+GetProfileSection(
+	_In_ LPCTSTR lpAppName,
+	_Out_writes_to_opt_(nSize, return + 1) LPTSTR lpReturnedString,
+	_In_ DWORD nSize
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("WriteProfileSectionW"),
+#else
+	entry("WriteProfileSectionA"),
+#endif
+	helpstring("Replaces the contents of the specified section in the Win.ini file with specified keys and values.")
+]
+WINBASEAPI
+BOOL
+WINAPI
+WriteProfileSection(
+	_In_ LPCTSTR lpAppName,
+	_In_ LPCTSTR lpString
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("GetPrivateProfileIntW"),
+#else
+	entry("GetPrivateProfileIntA"),
+#endif
+	helpstring("Retrieves an integer from a key in the specified section of the Win.ini file."),
+]
+WINBASEAPI
+UINT
+WINAPI
+GetPrivateProfileInt(
+	_In_     LPCTSTR lpAppName,
+	_In_     LPCTSTR lpKeyName,
+	_In_     INT nDefault,
+	_In_opt_ LPCTSTR lpFileName
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("GetPrivateProfileStringW"),
+#else
+	entry("GetPrivateProfileStringA"),
+#endif
+	helpstring("Retrieves a string from the specified section in an initialization file."),
+]
+WINBASEAPI
+DWORD
+WINAPI
+GetPrivateProfileString(
+	_In_opt_ LPCTSTR lpAppName,
+	_In_opt_ LPCTSTR lpKeyName,
+	_In_opt_ LPCTSTR lpDefault,
+	_Out_writes_to_opt_(nSize, return + 1) LPTSTR lpReturnedString,
+	_In_     DWORD nSize,
+	_In_opt_ LPCTSTR lpFileName
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("WritePrivateProfileStringW"),
+#else
+	entry("WritePrivateProfileStringA"),
+#endif
+	helpstring("Copies a string into the specified section of an initialization file."),
+]
+WINBASEAPI
+BOOL
+WINAPI
+WritePrivateProfileString(
+	_In_opt_ LPCTSTR lpAppName,
+	_In_opt_ LPCTSTR lpKeyName,
+	_In_opt_ LPCTSTR lpString,
+	_In_opt_ LPCTSTR lpFileName
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("GetPrivateProfileSectionW"),
+#else
+	entry("GetPrivateProfileSectionA"),
+#endif
+	helpstring("Retrieves all the keys and values for the specified section of an initialization file."),
+]
+WINBASEAPI
+DWORD
+WINAPI
+GetPrivateProfileSection(
+	_In_     LPCSTR lpAppName,
+	_Out_writes_to_opt_(nSize, return + 1) LPSTR lpReturnedString,
+	_In_     DWORD nSize,
+	_In_opt_ LPCSTR lpFileName
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("WritePrivateProfileSectionW"),
+#else
+	entry("WritePrivateProfileSectionA"),
+#endif
+	helpstring("Replaces the keys and values for the specified section in an initialization file."),
+]
+WINBASEAPI
+BOOL
+WINAPI
+WritePrivateProfileSection(
+	_In_opt_ LPCTSTR lpAppName,
+	_In_opt_ LPCTSTR lpString,
+	_In_opt_ LPCTSTR lpFileName
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("GetPrivateProfileSectionNamesW"),
+#else
+	entry("GetPrivateProfileSectionNamesA"),
+#endif
+	helpstring("Retrieves the names of all sections in an initialization file."),
+]
+WINBASEAPI
+DWORD
+WINAPI
+GetPrivateProfileSectionNames(
+	_Out_writes_to_opt_(nSize, return + 1) LPTSTR lpszReturnBuffer,
+	_In_     DWORD nSize,
+	_In_opt_ LPCTSTR lpFileName
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("GetPrivateProfileStructW"),
+#else
+	entry("GetPrivateProfileStructA"),
+#endif
+	helpstring("Retrieves the data associated with a key in the specified section of an initialization file."),
+]
+WINBASEAPI
+BOOL
+WINAPI
+GetPrivateProfileStruct(
+	_In_     LPCTSTR lpszSection,
+	_In_     LPCTSTR lpszKey,
+	_Out_writes_bytes_opt_(uSizeStruct) LPVOID   lpStruct,
+	_In_     UINT     uSizeStruct,
+	_In_opt_ LPCTSTR szFile
+);
+
+[
+	usesgetlasterror,
+#ifdef UNICODE
+	entry("WritePrivateProfileStructW"),
+#else
+	entry("WritePrivateProfileStructA"),
+#endif
+	helpstring("Copies data into a key in the specified section of an initialization file."),
+]
+WINBASEAPI
+BOOL
+WINAPI
+WritePrivateProfileStruct(
+	_In_     LPCTSTR lpszSection,
+	_In_     LPCTSTR lpszKey,
+	_In_reads_bytes_opt_(uSizeStruct) LPVOID lpStruct,
+	_In_     UINT     uSizeStruct,
+	_In_opt_ LPCTSTR szFile
+);
+
+}
+
